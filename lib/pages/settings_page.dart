@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:music_player_xiaomi/provider/theme_provider.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:provider/provider.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -47,7 +49,7 @@ class _SettingsPageState extends State<SettingsPage> {
             ListTile(
               title: Text("Настройки"),
             ),
-
+            //Advanced Setting
             ListTile(
               title: Text(
                 "Расширенные настройки",
@@ -58,9 +60,14 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
             ),
+            //Theme Setting
             ListTile(
               title: Text("Темный режим"),
-              trailing: Switch(value: false, onChanged: (value) {}),
+              trailing: Switch(
+                  value: context.watch<ThemeProvider>().isDarkTheme(),
+                  onChanged: (value) {
+                    context.read<ThemeProvider>().changeTheme(value);
+                  }),
             ),
             //Version Info
             FutureBuilder(
@@ -85,6 +92,7 @@ class _SettingsPageState extends State<SettingsPage> {
               ),
               trailing: Switch(value: false, onChanged: (value) {}),
             ),
+            //
             ListTile(
               title: Text("Эквалайзер"),
               trailing: Icon(Icons.arrow_forward_ios_rounded),
