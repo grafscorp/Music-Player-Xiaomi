@@ -1,3 +1,3 @@
 # music_player_xiaomi
 
-A new Flutter project.
+A copy of the standard Xiaomi music player on Flutter
