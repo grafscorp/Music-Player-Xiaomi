@@ -15,8 +15,19 @@ class TrackPage extends StatefulWidget {
 class _TrackPage extends State<TrackPage> {
   final colorIcon = Colors.white;
   final iconSize = 40.0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
+    ///Test
+    ///
+
+    ///
+    ///
     return SafeArea(
       child: Container(
         //padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
@@ -105,20 +116,26 @@ class _TrackPage extends State<TrackPage> {
                           size: iconSize,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          nextTrack(forward: false);
+                        },
                         icon: Icon(
                           Icons.skip_previous_rounded,
                           color: colorIcon,
                           size: iconSize,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          playAndPauseAudio(true);
+                        },
                         icon: Icon(
                           Icons.play_circle_fill_rounded,
                           size: 80,
                         )),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          nextTrack();
+                        },
                         icon: Icon(
                           Icons.skip_next_rounded,
                           color: colorIcon,
@@ -153,5 +170,16 @@ class _TrackPage extends State<TrackPage> {
 
   String twoDigits(int t) {
     return t.toString().padLeft(2, '0');
+  }
+
+  void playAndPauseAudio(bool play) {
+    // if (play)
+    //   context.read<AudioPlayerProvider>().playAudio();
+    // else
+    //   context.read<AudioPlayerProvider>().pauseAudio();
+  }
+
+  void nextTrack({bool forward = true}) {
+    //context.read<AudioPlayerProvider>().
   }
 }
