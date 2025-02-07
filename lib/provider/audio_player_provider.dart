@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:music_player_xiaomi/service/audio_player_xiaomi.dart';
@@ -7,7 +9,7 @@ class AudioPlayerProvider extends ChangeNotifier implements AudioPlayerXiaomi {
   // AudioPlayer get audioPlayer => throw UnimplementedError();
   @override
   AudioPlayer audioPlayer = AudioPlayer();
-
+  List<File> songs = [];
   @override
   void pauseAudio() {
     audioPlayer.pause();
