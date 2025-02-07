@@ -14,6 +14,8 @@ dependencies:
   just_audio_background: any
   just_audio: 0.9.43
   provider: 6.1.2
+  audio_metadata_reader: 1.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
