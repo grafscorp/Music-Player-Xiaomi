@@ -28,10 +28,11 @@ class AudioPlayerProvider extends ChangeNotifier implements AudioPlayerXiaomi {
   @override
   void setAudio(String audioPath, {bool toPlay = true}) {
     audioPlayer.setAsset(audioPath);
-    if (toPlay)
+    if (toPlay) {
       playAudio();
-    else
+    } else {
       pauseAudio();
+    }
   }
 
   @override
